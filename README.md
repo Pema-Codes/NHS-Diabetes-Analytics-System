@@ -22,4 +22,10 @@ An end-to-end Health Informatics data pipeline designed to ingest, process, and 
   * Normalized flat dataset into 1-to-Many relational structure (`Patients` and `ClinicalMetrics`).
   * Defined strict data typing (`FLOAT` for decimal ages/BMI, `BIT` flags for clinical indicators) and relational key constraints.
   * *Artifact:* [`01_create_schema.sql`](./01_create_schema.sql)
+    
+- [x] **Milestone 1.2: Automated ETL & Staging Pipeline**
+  * Developed a Python ETL script (`02_import_and_populate.py`) using `pandas` and `pyodbc` with `fast_executemany` batch processing.
+  * Successfully ingested 100,000 raw patient records into SSMS while maintaining referential integrity across Primary and Foreign Key constraints.
+  * Executed verification queries confirming 100% row count parity and relational join accuracy between `Patients` and `ClinicalMetrics`.
+  * *Artifact:* [`02_import_and_populate.py`](./02_import_and_populate.py)
      
