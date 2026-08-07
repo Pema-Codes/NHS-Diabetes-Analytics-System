@@ -28,4 +28,8 @@ An end-to-end Health Informatics data pipeline designed to ingest, process, and 
   * Successfully ingested 100,000 raw patient records into SSMS while maintaining referential integrity across Primary and Foreign Key constraints.
   * Executed verification queries confirming 100% row count parity and relational join accuracy between `Patients` and `ClinicalMetrics`.
   * *Artifact:* [`02_import_and_populate.py`](./02_import_and_populate.py)
-     
+
+- [x] **Milestone 1.3: Data Validation & Quality Auditing**
+  * Built T-SQL auditing scripts to detect data completeness and boundary constraints.
+  * Evaluated diabetes prevalence across age demographics using `CASE WHEN` aggregation.
+  * *Artifact:* [`03_data_quality_audit.sql`](./03_data_quality_audit.sql)
