@@ -4,6 +4,12 @@
 An end-to-end Health Informatics data pipeline designed to ingest, process, and analyze 100,000 patient records. This system normalizes raw clinical data into a T-SQL relational database, applies statistical risk models using Python, and delivers interactive executive dashboards in Power BI to support NHS clinical decision-making and resource allocation.
 
 ---
+##  Key Clinical Insights & Data Findings
+* **Elderly High-Risk Cohort:** Diabetes prevalence jumps significantly with age, reaching **20.44%** among elderly patients (65+), compared to lower rates in younger demographics.
+* **Data Completeness & Governance:** **35.82%** of patient records contain `'No Info'` for `SmokingHistory`, highlighting an operational focus area for front-line NHS data collection.
+* **Risk Stratification:** Over **15%** of the audited population fell into the *High Clinical Risk* category based on combined blood glucose $\ge$ 200 mg/dL and HbA1c $\ge$ 6.5% thresholds.
+
+---
 
 ## System Architecture & Tech Stack
 * **Database Engine:** Microsoft SQL Server Management Studio (SSMS)
@@ -33,3 +39,8 @@ An end-to-end Health Informatics data pipeline designed to ingest, process, and 
   * Built T-SQL auditing scripts to detect data completeness and boundary constraints.
   * Evaluated diabetes prevalence across age demographics using `CASE WHEN` aggregation.
   * *Artifact:* [`03_data_quality_audit.sql`](./03_data_quality_audit.sql)
+     
+- [x] **Milestone 1.4: Production Analytics Views & Risk Stratification**
+  * Created `vw_PatientRiskProfiles` to implement rule-based clinical risk stratification (`High Risk`, `Elevated Risk`, `Normal Risk`).
+  * Created `vw_DiabetesPrevalenceSummary` for pre-aggregated Power BI reporting.
+  * *Artifact:* [`04_production_views.sql`](./04_production_views.sql)
