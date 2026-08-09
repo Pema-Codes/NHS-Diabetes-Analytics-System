@@ -44,3 +44,10 @@ An end-to-end Health Informatics data pipeline designed to ingest, process, and 
   * Created `vw_PatientRiskProfiles` to implement rule-based clinical risk stratification (`High Risk`, `Elevated Risk`, `Normal Risk`).
   * Created `vw_DiabetesPrevalenceSummary` for pre-aggregated Power BI reporting.
   * *Artifact:* [`04_production_views.sql`](./04_production_views.sql)
+    
+### Phase 2: Python Analysis & Database Integration
+- [x] **Milestone 2.1: Database Connectivity & Ingestion**
+  * Connected Python directly to local `NHS_PracticeDB` using `pyodbc` & `sqlalchemy`.
+  *  Extracted combined `Patients` and `Admissions` data into Pandas DataFrames.
+  * Exported clean baseline dataset to `data/raw_admissions.csv`.
+  * *Artifact:* [`05_sql_connection.py`](./05_sql_connection.py)
