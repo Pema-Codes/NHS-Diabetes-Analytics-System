@@ -51,3 +51,20 @@ An end-to-end Health Informatics data pipeline designed to ingest, process, and 
   *  Extracted combined `Patients` and `Admissions` data into Pandas DataFrames.
   * Exported clean baseline dataset to `data/raw_admissions.csv`.
   * *Artifact:* [`05_sql_connection.py`](./05_sql_connection.py)
+
+- [x] **Milestone 2.2: Exploratory Data Analysis (EDA) & Correlations**
+  - Analyzed feature correlations (`HbA1cLevel`, `BloodGlucoseLevel`, `BMI`) with `Diabetes` outcome.
+  - Calculated clinical interaction risk metrics (High HbA1c + High BMI combination).
+     
+ ## Dataset Features
+
+| Column | Description |
+| :--- | :--- |
+| `PatientID` | Unique identifier |
+| `Gender` / `Age` | Demographic metrics |
+| `SmokingHistory` | Categorical lifestyle risk factor |
+| `Hypertension` / `HeartDisease` | Binary clinical indicators (0 or 1) |
+| `BMI` | Body Mass Index |
+| `HbA1cLevel` | Glycated hemoglobin test result (%) |
+| `BloodGlucoseLevel` | Fasting blood glucose level (mg/dL) |
+| `Diabetes` | Target variable (1 = Positive, 0 = Negative) |
