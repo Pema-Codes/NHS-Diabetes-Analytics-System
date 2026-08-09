@@ -45,26 +45,34 @@ An end-to-end Health Informatics data pipeline designed to ingest, process, and 
   * Created `vw_DiabetesPrevalenceSummary` for pre-aggregated Power BI reporting.
   * *Artifact:* [`04_production_views.sql`](./04_production_views.sql)
     
-### Phase 2: Python Analysis & Database Integration
-- [x] **Milestone 2.1: Database Connectivity & Ingestion**
-  * Connected Python directly to local `NHS_PracticeDB` using `pyodbc` & `sqlalchemy`.
-  *  Extracted combined `Patients` and `Admissions` data into Pandas DataFrames.
-  * Exported clean baseline dataset to `data/raw_admissions.csv`.
-  * *Artifact:* [`05_sql_connection.py`](./05_sql_connection.py)
+### **Phase 2: Python Statistical Analysis & Risk Scoring**
+- [x] **Milestone 2.1: Database Connectivity & Data Extraction**
+  * Connected Python directly to local `Diabetes_AnalyticsDB` using `pyodbc` & `sqlalchemy`.
+  * Extracted combined `Patients` and `ClinicalMetrics` data into Pandas DataFrames using relational `INNER JOIN`.
+  * Exported baseline dataset to `data/raw_diabetes_data.csv`.
+  * *Artifact:* [`05_sql_connection.py`](./python/05_sql_connection.py)
 
 - [x] **Milestone 2.2: Exploratory Data Analysis (EDA) & Correlations**
-  - Analyzed feature correlations (`HbA1cLevel`, `BloodGlucoseLevel`, `BMI`) with `Diabetes` outcome.
-  - Calculated clinical interaction risk metrics (High HbA1c + High BMI combination).
-     
- ## Dataset Features
+  * Analyzed feature correlations (`HbA1cLevel`, `BloodGlucoseLevel`, `BMI`) with `Diabetes` target outcome.
+  * Calculated clinical interaction risk metrics (High HbA1c $\ge$ 6.5% + High BMI $\ge$ 30.0 combination).
+  * *Artifact:* [`06_data_extraction_and_eda.py`](./python/06_data_extraction_and_eda.py)
+
+- [x] **Milestone 2.3: Statistical Risk Scoring Model**
+  * Built a weighted risk scoring algorithm combining HbA1c, Blood Glucose, BMI, and age/comorbidities.
+  * Categorized patients into `Low Risk`, `Medium Risk`, and `High Risk` tiers for clinical decision support.
+  * *Artifact:* [`07_risk_scoring_model.py`](./python/07_risk_scoring_model.py)
+
+## 📊 Dataset Features
 
 | Column | Description |
 | :--- | :--- |
-| `PatientID` | Unique identifier |
+| `PatientID` | Unique patient identifier |
 | `Gender` / `Age` | Demographic metrics |
 | `SmokingHistory` | Categorical lifestyle risk factor |
-| `Hypertension` / `HeartDisease` | Binary clinical indicators (0 or 1) |
-| `BMI` | Body Mass Index |
+| `Hypertension` / `HeartDisease` | Binary clinical indicators (`0` = No, `1` = Yes) |
+| `BMI` | Body Mass Index ($\text{kg/m}^2$) |
 | `HbA1cLevel` | Glycated hemoglobin test result (%) |
 | `BloodGlucoseLevel` | Fasting blood glucose level (mg/dL) |
-| `Diabetes` | Target variable (1 = Positive, 0 = Negative) |
+| `Diabetes` | Target variable (`1` = Diabetic, `0` = Non-diabetic) |
+| `Risk_Score` | Weighted clinical risk metric (0–100) |
+| `Risk_Category` | Stratified risk tier (`Low Risk`, `Medium Risk`, `High Risk`) |
