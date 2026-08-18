@@ -62,7 +62,27 @@ An end-to-end Health Informatics data pipeline designed to ingest, process, and 
   * Categorized patients into `Low Risk`, `Medium Risk`, and `High Risk` tiers for clinical decision support.
   * *Artifact:* [`07_risk_scoring_model.py`](./python/07_risk_scoring_model.py)
 
-## 📊 Dataset Features
+### Phase 3: Executive Reporting & Business Intelligence (Power BI)
+![Executive Operational Dashboard](dashboard_preview.png)
+
+- [x] **Milestone 3.1: Data Model & DAX Metric Engineering**
+  * Connected Power BI directly to `Diabetes_AnalyticsDB` using direct table relationships between `Patients` and `ClinicalMetrics`.
+  * Addressed string-matching edge cases and handled boolean indicators directly from base clinical metrics tables.
+  * Authored DAX measures for dynamic patient counts, diabetes prevalence rates, and condition-specific flags (`[Total Patients]`, `[High Risk Count]`, `[Diabetes Prevalence Rate]`).
+    
+- [x] **Milestone 3.2: Executive Dashboard Design & UI/UX Styling**
+  * Built an interactive single-page executive operational dashboard featuring KPI cards, risk distribution charts, and gender prevalence breakdowns.
+  * Applied NHS-compliant color branding (`#005A9E` primary blue, red/coral for high risk, amber for elevated risk, teal for normal risk).
+  * Designed an interactive Patient Risk Matrix with conditional background formatting to highlight high-risk patients ($\text{HbA1c} \ge 9.0\%$).
+  * Configured user slicers (Age slider, Gender tiles, Clinical Risk Category tiles) for real-time cross-filtering.
+  * *Artifact:* [`08_Executive_Operational_Dashboard.pbip`](08_Executive_Operational_Dashboard.pbip)
+
+- [x] **Milestone 3.3: Executive Findings & Operational Summary**
+  * **Cohort Distribution:** Elevated Risk accounts for 54K patients, High Clinical Risk for 28K patients, and Normal Risk for 17K patients.
+  * **Demographic Trends:** Female patients represent a higher volume of recorded diabetes cases (59K) compared to male patients (41K).
+  * **Clinical Insight:** High Clinical Risk patients consistently present an average HbA1c level of 9.00%, establishing an actionable threshold for immediate multidisciplinary team (MDT) nurse interventions.
+
+## Dataset Features
 
 | Column | Description |
 | :--- | :--- |
