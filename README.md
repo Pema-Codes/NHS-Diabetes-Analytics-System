@@ -63,7 +63,7 @@ An end-to-end Health Informatics data pipeline designed to ingest, process, and 
   * *Artifact:* [`07_risk_scoring_model.py`](./python/07_risk_scoring_model.py)
 
 ### Phase 3: Executive Reporting & Business Intelligence (Power BI)
-![Executive Operational Dashboard](dashboard_preview.png)
+![Executive Operational Dashboard](powerbi/dashboard_preview.png)
 
 - [x] **Milestone 3.1: Data Model & DAX Metric Engineering**
   * Connected Power BI directly to `Diabetes_AnalyticsDB` using direct table relationships between `Patients` and `ClinicalMetrics`.
