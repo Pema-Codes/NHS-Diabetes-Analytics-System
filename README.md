@@ -79,7 +79,7 @@ An end-to-end Health Informatics data pipeline designed to ingest, process, and 
 
 - [x] **Milestone 3.3: Executive Findings & Operational Summary**
   * **Cohort Distribution:** Elevated Risk accounts for 54K patients, High Clinical Risk for 28K patients, and Normal Risk for 17K patients.
-  * **Demographic Trends:** Female patients represent a higher volume of recorded diabetes cases (59K) compared to male patients (41K).
+  * **Demographic Trends:** Female patients account for a higher proportion of the high-risk cohort (4.5K) compared to male patients (4.0K).
   * **Clinical Insight:** High Clinical Risk patients consistently present an average HbA1c level of 9.00%, establishing an actionable threshold for immediate multidisciplinary team (MDT) nurse interventions.
 
 ## Dataset Features
