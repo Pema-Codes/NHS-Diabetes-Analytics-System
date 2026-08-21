@@ -1,4 +1,4 @@
-# NHS Diabetes Analytics & Clinical Decision Support System
+# Diabetes Analytics & Clinical Decision Support System
 
 ## Executive Summary
 An end-to-end Health Informatics data pipeline designed to ingest, process, and analyze 100,000 patient records. This system normalizes raw clinical data into a T-SQL relational database, applies statistical risk models using Python, and delivers interactive executive dashboards in Power BI to support NHS clinical decision-making and resource allocation.
